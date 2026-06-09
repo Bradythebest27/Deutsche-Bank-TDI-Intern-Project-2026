@@ -289,6 +289,15 @@ def default_selected_contractors() -> list[str]:
     return selected or list(CONTRACTORS.keys())
 
 
+def available_benchmark(selected_benchmark: str, returns: pd.DataFrame) -> str | None:
+    if selected_benchmark in returns.columns and returns[selected_benchmark].notna().any():
+        return selected_benchmark
+    for fallback in BENCHMARKS:
+        if fallback in returns.columns and returns[fallback].notna().any():
+            return fallback
+    return None
+
+
 with st.sidebar:
     st.subheader("Universe")
     selected_contractors = st.multiselect(
@@ -353,8 +362,8 @@ if refresh_clicked:
 
 refresh_token = int(datetime.now(UTC).timestamp()) if refresh_clicked else 0
 custom_tickers = [custom_ticker] if custom_ticker else []
-all_tickers = tuple(sorted(set(selected_contractors + [benchmark] + custom_tickers)))
-profile_tickers = tuple(sorted(set(selected_contractors + [benchmark] + custom_tickers)))
+all_tickers = tuple(sorted(set(selected_contractors + list(BENCHMARKS.keys()) + custom_tickers)))
+profile_tickers = tuple(sorted(set(selected_contractors + list(BENCHMARKS.keys()) + custom_tickers)))
 statement_tickers = tuple(sorted(set(selected_contractors + custom_tickers)))
 
 st.markdown(
@@ -403,8 +412,18 @@ if not include_covid_visuals:
         display_indexed.index <= pd.to_datetime(COVID_END)
     )
     display_indexed.loc[covid_index_mask] = pd.NA
-comparison = compare_pre_post_periods(returns, benchmark)
-event_data = run_event_study(returns, benchmark, events, window=event_window, tickers=selected_contractors)
+effective_benchmark = available_benchmark(benchmark, returns)
+if effective_benchmark is None:
+    st.error("No benchmark price data was returned. Yahoo Finance may be rate-limiting this deployment; try Refresh Data again in a few minutes.")
+    st.stop()
+if effective_benchmark != benchmark:
+    st.warning(
+        f"`{benchmark}` was not returned by Yahoo Finance, likely because of rate limiting. "
+        f"Using `{effective_benchmark}` as the benchmark for this run."
+    )
+
+comparison = compare_pre_post_periods(returns, effective_benchmark)
+event_data = run_event_study(returns, effective_benchmark, events, window=event_window, tickers=selected_contractors)
 event_score = event_sensitivity(event_data, event_window)
 derivative_summary, derivative_timeline = derivative_diagnostics(
     visual_prices,
@@ -430,8 +449,8 @@ scenario_frame = scenario_projection(
     scenario_name,
     manual_adjustment,
 )
-quality = data_quality_report(market_data, prices, profiles, fundamentals, selected_contractors + [benchmark])
-chart_tickers = [ticker for ticker in selected_contractors + [benchmark] if ticker in display_indexed.columns]
+quality = data_quality_report(market_data, prices, profiles, fundamentals, selected_contractors + [effective_benchmark])
+chart_tickers = [ticker for ticker in selected_contractors + [effective_benchmark] if ticker in display_indexed.columns]
 
 contractor_rows = comparison[comparison["Ticker"].isin(selected_contractors)]
 median_excess = contractor_rows["Post-2022 Excess vs Benchmark"].median(skipna=True)
@@ -465,7 +484,7 @@ with col3:
     st.markdown(
         f"""
         <div class="metric-card">
-            <div class="metric-label">Median Excess vs {benchmark}</div>
+            <div class="metric-label">Median Excess vs {effective_benchmark}</div>
             <div class="metric-value">{pct(median_excess)}</div>
             <div class="metric-note">Benchmark-relative post-Ukraine annualized return.</div>
         </div>
@@ -548,7 +567,7 @@ with tabs[0]:
     ]
     available_columns = [column for column in display_columns if column in comparison.columns]
     st.dataframe(
-        comparison[comparison["Ticker"].isin(selected_contractors + [benchmark])][available_columns].style.format(
+        comparison[comparison["Ticker"].isin(selected_contractors + [effective_benchmark])][available_columns].style.format(
             {column: "{:.1%}" for column in available_columns if column != "Ticker"}
         ),
         width="stretch",
@@ -734,7 +753,7 @@ with tabs[5]:
     elif custom_ticker not in prices.columns:
         st.warning(f"No price data was returned for `{custom_ticker}`. Check the Yahoo Finance ticker format.")
     else:
-        custom_event_data = run_event_study(returns, benchmark, events, window=event_window, tickers=[custom_ticker])
+        custom_event_data = run_event_study(returns, effective_benchmark, events, window=event_window, tickers=[custom_ticker])
         custom_event_score = event_sensitivity(custom_event_data, event_window)
         custom_report = single_ticker_report(
             custom_ticker,
@@ -810,7 +829,7 @@ with tabs[5]:
 
 with tabs[6]:
     st.subheader("Event Study")
-    st.caption(f"Cumulative abnormal return versus {benchmark}. Window: {event_window} trading days before and after each event.")
+    st.caption(f"Cumulative abnormal return versus {effective_benchmark}. Window: {event_window} trading days before and after each event.")
     st.plotly_chart(event_study_chart(event_data), width="stretch")
 
     if not event_data.empty and "Offset" in event_data.columns:
@@ -869,7 +888,7 @@ with tabs[7]:
     export_body = report_download(
         verdict,
         selected_contractors,
-        benchmark,
+        effective_benchmark,
         event_window,
         scenario_name,
         scorecard,
