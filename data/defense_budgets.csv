@@ -1,0 +1,49 @@
+Country,Region,Year,Defense Spending % GDP,Source URL,Notes
+France,Western Europe,2017,1.78,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+France,Western Europe,2018,1.81,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+France,Western Europe,2019,1.82,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+France,Western Europe,2022,1.87,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+France,Western Europe,2023,1.94,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+France,Western Europe,2024e,2.03,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+France,Western Europe,2025e,2.05,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+Germany,Western Europe,2017,1.21,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Germany,Western Europe,2018,1.23,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Germany,Western Europe,2019,1.33,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Germany,Western Europe,2022,1.48,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Germany,Western Europe,2023,1.61,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Germany,Western Europe,2024e,2.00,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+Poland,Eastern Flank,2017,1.88,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Poland,Eastern Flank,2018,2.00,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Poland,Eastern Flank,2019,1.96,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Poland,Eastern Flank,2022,2.21,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Poland,Eastern Flank,2023,3.27,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+Poland,Eastern Flank,2024e,3.79,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+Poland,Eastern Flank,2025e,4.48,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+United Kingdom,Western Europe,2017,2.08,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United Kingdom,Western Europe,2018,2.10,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United Kingdom,Western Europe,2019,2.08,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United Kingdom,Western Europe,2022,2.27,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United Kingdom,Western Europe,2023,2.25,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United Kingdom,Western Europe,2024e,2.33,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+United Kingdom,Western Europe,2025e,2.40,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+United States,North America,2017,3.28,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United States,North America,2018,3.25,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United States,North America,2019,3.49,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United States,North America,2022,3.21,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United States,North America,2023,3.10,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+United States,North America,2024e,3.21,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+United States,North America,2025e,3.22,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+NATO Europe and Canada,Aggregate,2017,1.45,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Europe and Canada,Aggregate,2018,1.48,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Europe and Canada,Aggregate,2019,1.51,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Europe and Canada,Aggregate,2022,1.63,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Europe and Canada,Aggregate,2023,1.74,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Europe and Canada,Aggregate,2024e,1.99,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+NATO Europe and Canada,Aggregate,2025e,2.27,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+NATO Total,Aggregate,2017,2.37,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Total,Aggregate,2018,2.38,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Total,Aggregate,2019,2.52,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Total,Aggregate,2022,2.44,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Total,Aggregate,2023,2.44,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO Table 3 share of real GDP.
+NATO Total,Aggregate,2024e,2.61,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
+NATO Total,Aggregate,2025e,2.76,https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf,NATO estimate.
